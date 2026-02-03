@@ -5,8 +5,6 @@ The application supports account creation and basic banking transactions with pr
 
   
 
-GitHub Repository  
-https://your-github-repo-url  
 
 Tech Stack  
 Frontend: React.js  
