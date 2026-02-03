@@ -34,7 +34,7 @@ function App() {
       setMsg("✅ " + data.message);
       loadAccounts();
     } catch (err) {
-      setMsg("❌ " + err.message);
+      setMsg(err.message);
     }
   };
 

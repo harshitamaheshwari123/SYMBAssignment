@@ -7,7 +7,7 @@ app.use(express.json());
 
 let accounts = [];
 
-// ========== CREATE ACCOUNT ==========
+
 app.post("/api/accounts", (req, res) => {
   const { accountNo, holderName, isKYCVerified } = req.body;
 
@@ -31,12 +31,12 @@ app.post("/api/accounts", (req, res) => {
   res.json({ message: "Account created", account: newAccount });
 });
 
-// ========== GET ALL ACCOUNTS ==========
+
 app.get("/api/accounts", (req, res) => {
   res.json(accounts);
 });
 
-// ========== DEPOSIT ==========
+
 app.post("/api/deposit", (req, res) => {
   const { accountNo, amount } = req.body;
   const acc = accounts.find(a => a.accountNo === accountNo);
@@ -48,7 +48,7 @@ app.post("/api/deposit", (req, res) => {
   res.json({ message: "Deposit successful", balance: acc.balance });
 });
 
-// ========== WITHDRAW ==========
+
 app.post("/api/withdraw", (req, res) => {
   const { accountNo, amount } = req.body;
   const acc = accounts.find(a => a.accountNo === accountNo);
@@ -64,7 +64,7 @@ app.post("/api/withdraw", (req, res) => {
   res.json({ message: "Withdraw successful", balance: acc.balance });
 });
 
-// ========== TRANSFER ==========
+
 app.post("/api/transfer", (req, res) => {
   const { senderAccount, receiverAccount, amount } = req.body;
 
@@ -75,7 +75,7 @@ app.post("/api/transfer", (req, res) => {
     return res.status(404).json({ error: "Sender or Receiver not found" });
   }
 
-  // Mandatory Validations
+ 
   if (!sender.isKYCVerified) {
     return res.status(400).json({ error: "Sender KYC not verified" });
   }
