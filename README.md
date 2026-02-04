@@ -51,9 +51,3 @@ cd frontend
 npm install  
 npm start  
 
-  
-
-Notes  
-- This project uses in-memory storage.  
-- Restarting backend will reset all data.  
-- Account numbers must match exactly for transfers.  
