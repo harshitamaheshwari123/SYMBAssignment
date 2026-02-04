@@ -51,8 +51,7 @@ cd frontend
 npm install  
 npm start  
 
-Demo Video  
-https://your-demo-video-link  
+  
 
 Notes  
 - This project uses in-memory storage.  
